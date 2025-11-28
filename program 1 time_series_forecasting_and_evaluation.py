@@ -14,12 +14,13 @@ from math import sqrt
 # ---------------------------------------------
 # Replace with your dataset
 # df must have a datetime index & a numeric column
-df = pd.read_csv("your_timeseries.csv")
+df = pd.read_csv("/content/Electric_Production.csv")
 
-df['Date'] = pd.to_datetime(df['Date'])
+print(df.head(5))
+df['Date'] = pd.to_datetime(df['DATE'])
 df.set_index('Date', inplace=True)
 
-ts = df['Value']       # replace 'Value' with your column name
+ts = df['IPG2211A2N']       # replace 'Value' with your column name
 
 
 
